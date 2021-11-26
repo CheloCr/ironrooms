@@ -4,9 +4,9 @@ exports.home = async (req, res) => {
 	res.render("home")
 }
 
-exports.signup = async (req, res) => {
+exports.viewSignup = async (req, res) => {
 	res.render("signup")
 }
-exports.login = async (req, res) => {
+exports.viewLogin = async (req, res) => {
 	res.render("login")
 }
