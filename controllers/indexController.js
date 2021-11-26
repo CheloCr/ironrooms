@@ -68,7 +68,7 @@ exports.signup = async (req, res) => {
 exports.viewLogin = async (req, res) => {
 	res.render("login")
 }
-// Fomrulario Login funciona
+//Fomrulario Login funciona
 exports.login = async (req, res) => {
 
 	try {
@@ -100,11 +100,11 @@ exports.login = async (req, res) => {
 	req.session.currentUser = {
 		_id: foundUser._id,
 		email: foundUser.email,
-		mensaje: "LO LOGRAMOS CARAJO"
+		mensaje: "Bienvenido a tu perfil Chelito"
 	}
 
 	// 5. REDIRECCIONAR AL HOME
-	res.redirect("/")
+	res.redirect("/users/profile")
 
 
 	} catch (error) {
