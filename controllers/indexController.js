@@ -68,7 +68,7 @@ exports.signup = async (req, res) => {
 exports.viewLogin = async (req, res) => {
 	res.render("login")
 }
-//Fomrulario Login funciona
+//Formulario Login funciona
 exports.login = async (req, res) => {
 
 	try {
@@ -111,4 +111,24 @@ exports.login = async (req, res) => {
 		console.log(error)	
 	}
 }
+
+
+//Usuario puede cerrar sesión
+exports.logout = async (req, res)  => {
+ console.log("cerrando sesión")
+	req.session.destroy((error) => {
+
+		// SE EVALUÁ SI HUBO UN ERROR AL BORRAR LA COOKIE
+		if(error){
+			console.log(error)
+			return
+		}
+
+		// REDIRECCIONAR HACIA LA PÁGINA DE HOME
+		res.redirect("/")
+
+	})
+
+}
+
 
