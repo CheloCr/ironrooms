@@ -16,6 +16,8 @@ app.set("view engine", "hbs")
 
 hbs.registerPartials(__dirname + "/views/partials")
 
+app.use(express.urlencoded({ extended: true })) // Poder recibir datos de los formularios
+
 connectDB()
 
 // 3. RUTAS
